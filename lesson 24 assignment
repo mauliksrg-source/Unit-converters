@@ -1,0 +1,25 @@
+import tkinter as tk
+root=tk.Tk()
+root.geometry("600x600")
+root.configure(bg="black")
+l=tk.Label(root,text="Unit conversions", bg="black", fg="green", font=("Times", 24, "bold"))
+l.place(relx=0.5, rely=0.2, anchor="center")
+i=tk.Entry(root)
+i.place(relx=0.5, rely=0.4, anchor="center")
+o=tk.Entry(root)
+o.place(relx=0.5, rely=0.45, anchor="center")
+e=tk.Label(root, text="", bg="black", fg="lightgreen", font=("Times", 24, "bold"))
+e.place(relx=0.5, rely=0.525, anchor="center")
+g=tk.Label(root, text="", bg="black", fg="lightgreen", font=("Times", 24, "bold"))
+g.place(relx=0.5, rely=0.65, anchor="center")
+def kmmiles():
+    a=int(i.get())/0.609
+    e.config(text=a)
+b=tk.Button(root, text="Km to Miles", command=kmmiles)
+b.place(relx=0.5, rely= 0.6, anchor="center")
+def cf():
+    w=int(o.get())*(9/5)+32
+    g.config(text=w)
+b=tk.Button(root, text="Celsius to Farenheit", command=cf)
+b.place(relx=0.5, rely= 0.7, anchor="center")
+root.mainloop()
